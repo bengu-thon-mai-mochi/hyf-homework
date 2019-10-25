@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Homework week 3 Form</title>
+</head>
+
+<body>
+    <h1>Form</h1>
+    <form id="form1" method="post" action="success.html">
+        <div class="pc-tab">
+            <input checked="checked" id="tab1" type="radio" name="pct" />
+            <input id="tab2" type="radio" name="pct" />
+            <input id="tab3" type="radio" name="pct" />
+            <input id="tab4" type="radio" name="pct" /> 
+            <section>
+                <div class="tab1">
+                    <header> 
+                        <figure><img src="http://www.geekcals.com/wp-content/uploads/2015/08/catheart2.jpg" alt="cat-log"></figure>
+                        <nav>
+                            <ul>
+                                <li><a href="#tab1">Step 1</a></li>
+                                <li><a href="#tab2">Step 2</a></li>
+                                <li><a href="#tab3">Step 3</a></li>
+                                <li><a href="#tab4">Step 4</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <div class="inputs">
+                        
+                            <h2>Sign up to yourcustomtailor.com</h2>
+                            <p> We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+                            <p> Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details about your first..</p>
+                        
+                        
+                            <h3>Step 1/4 - tell us who you are? </h3>
+                            <progress value="25" max="100"></progress>
+                            <p>Nice to meet you. Let's spend a minute to get to know each other?
+                                Please enter the following:</p>
+                        
+                        <div>
+                            <label for="firstname">First Name*</label>
+                            <input type="text" class="input-required" id="firstname" name="firstname" required>
+
+                            <label for="lastname">Last name*</label>
+                            <input type="text" class="input-required" id="lastname" name="lastname" required> 
+                        
+                            <label for="country">Country*</label>
+                            <select id="country" class="input-required" name="country" required >
+                                <option value = "1">EU Countries</option>
+                                <option value = "2">Non-eu Countries</option>
+                            </select>
+
+                            <label for="street-address">Street address*</label>
+                            <input type="text" class="input-required" id="street-address" name="street-address" required>
+
+                            <label for="post-code">Post code*</label>
+                            <input type="number" pattern="[0-9]{3,4}" class="input-required" id="post-code" name="post-code"  required>
+                        
+                            <label for="profile-description">Profile Description</label>
+                            <textarea name="profile-description" maxlength="500" placeholder="Please provide a short description of yourself to be displayed on our social community pages." id="profile-description" cols="50" rows="10"></textarea>
+
+                            <p> Using the same address for billing and shipping? Uncheck below to fill out seperate shipping address. </p>
+                            <label for="toggle-1">Shipping Address</label>
+                            <input type="checkbox" id="toggle-1" checked>
+                            <div class="hidden-content">
+                                <form>
+                                    <label for="firstname">First Name*</label>
+                                    <input type="text" class="input-required" id="firstname" name="firstname" required>
+            
+                                    <label for="lastname">Last name*</label>
+                                    <input type="text" class="input-required" id="lastname" name="lastname" required> 
+            
+                                    <label for="country">Country*</label>
+                                    <input type="text" class="input-required" id="country" name="country" required>
+    
+                                    <label for="street-address">Street address*</label>
+                                    <input type="text" class="input-required" id="street-address" name="street-address" required>
+    
+                                    <label for="post-code">Post code*</label>
+                                    <input type="number" pattern="[0-9]{3,4}" class="input-required" id="post-code" name="post-code"  required>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <label for="tab2" id="label2" class="navigation">Next Step</label>
+                </div>
+
+                <div class="tab2">
+                    <header> 
+                        <figure><img src="http://www.geekcals.com/wp-content/uploads/2015/08/catheart2.jpg" alt="cat-log"></figure>
+                        <nav>
+                            <ul>
+                                <li><a href="#tab1">Step 1</a></li>
+                                <li><a href="#tab2">Step 2</a></li>
+                                <li><a href="#tab3">Step 3</a></li>
+                                <li><a href="#tab4">Step 4</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <div class="inputs">
+                        
+                            <h2>Sign up to yourcustomtailor.com</h2>
+                       
+                            <h3>Step 2/4 - tell us who you are? </h3>
+                            <progress max="100" value="50"></progress>
+                            <p>We will probably need to stay in touch somehow. Let's know how can we reach you... </p>
+                     
+                        <div>
+                            <label for="email">Email*</label>
+                            <input type="email" class="input-required" id="email" name="email" required>
+    
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone"> 
+
+                            <label for="password">Password*</label>
+    
+                            <input type="password" pattern="(?=^.{10,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="A password must be minimum 10 characters and should include uppercase and lowercase letters." class="input-required" id="password" name="password" required> 
+    
+                            <label for="password-repeat">Re-enter Password*</label>
+                            <input type="password" pattern="^.{10,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Please repeat the password you entered above." class="input-required" id="password-repeat" name="password-repeat" required>
+
+                            <fieldset class='newsletter-signup'>
+                                <legend>I want to sign up for the newsletter</legend>
+            
+                                <input id="weekly-news" name="news" type="radio" value="weekly-news"/>
+                                <label for="weekly-news" class="radio-label">Weekly news</label>
+            
+                                <input id="monthly-news" name="news" type="radio" value="monthly-news"/>
+                                <label for="monthly-news" class="radio-label">Monthly news</label>   
+                                    
+                                <input id="no-news" name="news" type="radio" value="no-news" />
+                                <label for="no-news" class="radio-label">Don't send me news</label>   
+                            </fieldset>
+                        </div>
+                   </div>
+                   
+                    <label for="tab1" class="navigation">Previous Step</label>
+                    <label for="tab3" id="label3" class="navigation">Next Step</label>
+                </div>
+                
+                <div class="tab3">
+                    <header> 
+                        <figure><img src="http://www.geekcals.com/wp-content/uploads/2015/08/catheart2.jpg" alt="cat-log"></figure>
+                        <nav>
+                            <ul>
+                                <li><a href="#tab1">Step 1</a></li>
+                                <li><a href="#tab2">Step 2</a></li>
+                                <li><a href="#tab3">Step 3</a></li>
+                                <li><a href="#tab4">Step 4</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <div class="inputs">
+                        
+                            <h2>Sign up to yourcustomtailor.com</h2>
+                            <h3>Step 3/4 - Time to learn about your preferences </h3>
+                            <progress max="100" value="75"></progress>
+                       
+                        <div>            
+                            <fieldset class="newsletter-items">
+                                <legend>What kind of items are you interested in receiving offers?</legend>
+    
+                                <input id="apparel" name="apparel" type="radio" value="apparel" checked/>
+                                <label for="apparel" class="radio-label">Apparel</label>
+    
+                                <input id="jewelry" name="jewelry" type="radio" value="jewelry" checked />
+                                <label for='talk-type-2' class="radio-label">Jewelry"</label>
+    
+                                <input id="accessories" name="accessories" type="radio" value="accessories" checked/>
+                                <label for="accessories" class="radio-label">Accessories</label>
+    
+                                <input id="shoes" name="shoes" type="radio" value="shoes" checked/>
+                                <label for="shoes" class="radio-label">Shoes</label>
+    
+                                <input id="handbags" name="handbags" type="radio" value="handbags"/>
+                                <label for="handbags" class="radio-label">Handbags</label>
+                            </fieldset>
+                            <fieldset class="newsletter-images">
+                                <legend>Choose the images that best resemble your style</legend>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-1" name= "img-item-1" type="radio" value="img-item-1"/>
+                                    <label for="img-item-1" class="radio-label">Select</label>
+                                </div>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-2" name= "img-item-2" type="radio" value="img-item-2"/>
+                                    <label for="img-item-2" class="radio-label">Select</label>
+                                </div>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-3" name= "img-item-3" type="radio" value="img-item-3"/>
+                                    <label for="img-item-3" class="radio-label">Select</label>
+                                </div>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-4" name= "img-item-4" type="radio" value="img-item-4"/>
+                                    <label for="img-item-4" class="radio-label">Select</label>
+                                </div>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-5" name= "img-item-5" type="radio" value="img-item-5"/>
+                                    <label for="img-item-5" class="radio-label">Select</label>
+                                </div>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-5" name= "img-item-5" type="radio" value="img-item-5"/>
+                                    <label for="img-item-5" class="radio-label">Select</label>
+                                </div>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-6" name= "img-item-6" type="radio" value="img-item-6"/>
+                                    <label for="img-item-6" class="radio-label">Select</label>
+                                </div>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-7" name= "img-item-7" type="radio" value="img-item-7"/>
+                                    <label for="img-item-7" class="radio-label">Select</label>
+                                </div>
+                                <div>
+                                    <img src="https://hudaworld.com/wp-content/themes/neptune-by-osetin/assets/img/placeholder-square.jpg" alt="img">
+                                    <input id="img-item-8" name= "img-item-8" type="radio" value="img-item-8"/>
+                                    <label for="img-item-8" class="radio-label">Select</label>
+                                </div>
+                            </fieldset>              
+                        </div>
+                    </div>
+                    <label for="tab2" class="navigation">Previous Step</label>
+                    <label for="tab4" id="label4" class="navigation">Next Step</label>
+                </div>
+
+                <div class="tab4">
+                    <header> 
+                        <figure><img src="http://www.geekcals.com/wp-content/uploads/2015/08/catheart2.jpg" alt="cat-log"></figure>
+                        <nav>
+                            <ul>
+                                <li><a href="#tab1">Step 1</a></li>
+                                <li><a href="#tab2">Step 2</a></li>
+                                <li><a href="#tab3">Step 3</a></li>
+                                <li><a href="#tab4">Step 4</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <div class="inputs">            
+                        
+                            <h2>Sign up to yourcustomtailor.com</h2>
+                        
+                            <h3>Step 4/4 - Payment Details </h3>
+                            <progress max="100" value="100"></progress>
+                            <p>Please fill in your payment details</p>
+                    
+                        <div>
+                            <label for="name-on-card">Name on Card*</label>
+                            <input type="text" class="input-required" id="name-on-card" name="name-on-card" required>
+        
+                            <label for="card-type">Card Type*</label>
+                            <select id="card-type" class="input-required" name="card-type" required >
+                                <option value = "1">Master</option>
+                                <option value = "2">Visa</option>
+                            </select>                            
+    
+                            <label for="credit-card-number">Credit Card Number*</label>
+                            <input type="number" class="input-required" pattern="[0-9]{16}" id="credit-card-number" name="credit-card-number" required> 
+        
+                            <label for="first-name">First Name*</label>
+                            <input type="text" class="input-required" id="first-name" name="first-name" required> 
+
+                            <label for="expiry-month">Expirty Month*</label>
+                            <input type="number" class="input-required" id="expiry-month" name="expiry-month" required>
+
+                            <label for="expiry-year">Expirty Year*</label>
+                            <input type="number" class="input-required" id="expiry-year" name="expiry-year" required>
+
+                            <label for="ccv">CCV*</label>
+                            <input type="ccv" class="input-required" pattern="[0-9]{3}" id="ccv" name="ccv" required>
+                        </div>
+                    </div>
+                    <label for="tab3" class="navigation">Previous Step</label>
+                    <input type="submit" id="submit">
+                </div>
+            </section>
+        </div>
+    </form>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
