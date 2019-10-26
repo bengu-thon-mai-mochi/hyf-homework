@@ -7,8 +7,8 @@ body {
 header { 
     background-color: #FAFAFA;
     border-bottom: 1px solid lightgray;
-    height: 200px;
-    width: 100%;
+    padding-top: 8%;
+    padding-bottom: 8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,6 +82,7 @@ aside p {
 }
 
 .container {
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,7 +91,8 @@ aside p {
 .row {
     display: flex;
     flex-direction: row;
-    width: 75%;
+    padding-right: 10%;
+    padding-left:10%;
     align-items: flex-start;
     justify-content: stretch;
     margin-top: 5%;
@@ -163,7 +165,7 @@ iframe {
     border-bottom: 1px solid lightgray;
 }
 
-@media all and (max-width: 444px) {
+@media all and (max-width: 550px) {
     header{
         align-content: flex-start;
         width: 100%;
