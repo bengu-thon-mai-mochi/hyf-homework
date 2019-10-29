@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 2480px;    /* width of A4 in pixels */
+    height: 3508px;    /* height of A4 in pixels */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(243, 236, 236);
+}     
+.main-body {
+    display: flex; 
+    flex-direction: row; 
+    align-content: stretch;
+    width: 100%;
+    height: 90%; 
+}
+.aside {
+    display: flex; 
+    flex-direction: column; 
+    width: 55%;
+    height: 95%;
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.bio,
+.contact {
+    background-color:lightpink;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 5px;
+}
+.main-section {
+    display: flex; 
+    flex-direction: column;
+    align-content: stretch;
+    padding: 50px;
+    height: 95%;
+    margin-right: 50px;
+}
+header {
+    width: 96%;
+    height: 10%;
+    margin:20px 50px 20px 50px;
+    background-color:blue;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+h1 {
+    color: lightyellow;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 8em;
+}
+header p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em;
+    color: blanchedalmond;
+}
+.cv-photo {
+    width: 100%;
+    border-radius: 3%;
+    box-sizing: border-box;
+    border: 10px dotted blue;
+    border-radius: 30px;
+}
+li {
+    display: block;
+}
+h2 {
+    font-size: 4.20em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 9px;
+}
+.headings-at-main-section {
+    text-align: left;
+    border-bottom: 8px solid darkblue;
+    border-top: 8px solid darkblue;
+    padding: 9px;
+}
+.aside h2 {
+    border-bottom: 8px solid darkblue;
+}
+.job-position {
+    font-size: 4.20em;
+    padding: 20px 20px 0px 30px;
+    font-family:Arial, Helvetica, sans-serif; 
+}
+.company-or-school-name {
+    font-size: 4em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0 20px 0 60px;
+    font-style: italic;
+}
+.aside p {
+    font-size: 2.75em;
+    padding: 15px 15px 5px 15px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main-section p,
+.learning-methods,
+.hyf-info {
+    font-size: 3.75em;
+    padding: 0 0 0 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+}
+.educational-background,
+.learning-methods {
+    margin-top: 10px;
+}
+.educational-background {
+    padding: 20px;
+}
+.contact:hover {
+    background-color: blue;
+    color: white;
+}

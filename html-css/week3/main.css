@@ -1,0 +1,241 @@
+/* Component Needs */
+
+.pc-tab>input,
+.pc-tab section>div {
+    display: none;
+}
+
+#tab1:checked~section .tab1,
+#tab2:checked~section .tab2,
+#tab3:checked~section .tab3,
+#tab4:checked~section .tab4 {
+    display: block;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background: pink;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+h1 {
+    text-align: center;
+    font-weight: 100;
+    font-size: 60px;
+    color: #e74c3c;
+}
+
+
+.pc-tab {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.pc-tab ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.pc-tab label.navigation {
+    display: block;
+    padding: 15px;
+    border-bottom: 0;
+    cursor : pointer;
+    border: 1px solid #000;
+}
+
+input {
+    margin: 10px 0px 10px 0px;
+    padding: 2px;
+    display: block;
+}
+
+.tab1, .tab2, .tab3, .tab4 {
+    display: flex;
+}
+
+#tab1:checked ~ nav .tab1 label,
+#tab2:checked ~ nav .tab2 label ,
+#tab3:checked ~ nav .tab3 label , 
+#tab4:checked ~ nav .tab4 label {
+    position: relative;
+}
+
+#tab1:checked ~ nav .tab1 label:after,
+#tab2:checked ~ nav .tab2 label:after,
+#tab3:checked ~ nav .tab3 label:after,
+#tab4:checked ~ nav .tab4 label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+}
+
+section div{
+    margin-top: 3%;
+    width: 100%;
+    padding: 2%;
+    border: 1px solid green;
+    background: #fff;
+}
+
+button {
+    background: none;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+figure {
+    display: flex;
+    justify-content: baseline;
+}
+
+nav ul li a {
+    margin: 10px;
+    text-decoration: none;
+    color: #e74c3c;
+   font-size: 1.5em;
+}
+
+nav ul li a:hover {
+    color: #e74;
+    font-size: 1.45em;
+}
+figure img {
+    width: 100px;
+}
+
+.hidden-content {
+    display: block;
+}
+
+input[type=checkbox]:checked ~ .hidden-content {
+   display: none;
+}
+
+input[type=checkbox]:checked ~ .hide-me {
+    display: inherit ;
+}
+
+input[type=radio] {
+    display: inline;
+}
+
+.hide-me {
+    display: none;
+}
+
+li {
+    display: block;
+}
+
+.newsletter-images img {
+    width: 70%;
+    margin: 1%;
+}
+
+.newsletter-images div {
+    margin: 1%;
+    width: 150px;
+    float:left;
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+    flex: 2 1 3%;
+    border:2px solid blue;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type="password"],
+input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+input[type=submit], .navigation {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+
+
+fieldset {
+    border: none;
+}
+ /* font-styling */
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.50em;
+}
+
+fieldset legend {
+    font-size: 1.20em;
+}
+
+ /* font-styling */
+
+ /* progress-bar styling */
+ progress{
+    appearance: none;
+    border-radius: 1.55em;
+    width: 100%;
+    height: 1em;
+}
+@media only screen and (max-width: 600px) {
+    .pc-tab ul {
+       flex-direction: column;
+    }
+    .pc-tab li {
+        width: 100%;
+     }
+
+    label:after {
+        height : 0px !important;
+    }
+  }
