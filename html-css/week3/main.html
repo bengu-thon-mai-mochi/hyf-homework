@@ -59,7 +59,7 @@
                             <input type="text" class="input-required" id="street-address" name="street-address" required>
 
                             <label for="post-code">Post code*</label>
-                            <input type="number" pattern="[0-9]{3,4}" class="input-required" id="post-code" name="post-code"  required>
+                            <input pattern="[0-9]{3,4}" class="input-required" id="post-code" name="post-code"  required>
                         
                             <label for="profile-description">Profile Description</label>
                             <textarea name="profile-description" maxlength="500" placeholder="Please provide a short description of yourself to be displayed on our social community pages." id="profile-description" cols="50" rows="10"></textarea>
@@ -70,19 +70,19 @@
                             <div class="hidden-content">
                                 <form>
                                     <label for="firstname">First Name*</label>
-                                    <input type="text" class="input-required" id="firstname" name="firstname" required>
+                                    <input type="text" class="input-required" id="firstname"  required>
             
                                     <label for="lastname">Last name*</label>
-                                    <input type="text" class="input-required" id="lastname" name="lastname" required> 
+                                    <input type="text" class="input-required" id="lastname" required> 
             
                                     <label for="country">Country*</label>
-                                    <input type="text" class="input-required" id="country" name="country" required>
+                                    <input type="text" class="input-required" id="country" required>
     
                                     <label for="street-address">Street address*</label>
-                                    <input type="text" class="input-required" id="street-address" name="street-address" required>
+                                    <input type="text" class="input-required" id="street-address"  required>
     
                                     <label for="post-code">Post code*</label>
-                                    <input type="number" pattern="[0-9]{3,4}" class="input-required" id="post-code" name="post-code"  required>
+                                    <input type="number" pattern="[0-9]{3,4}" class="input-required" id="post-code"   required>
                                 </form>
                             </div>
                         </div>
@@ -116,10 +116,10 @@
                             <input type="email" class="input-required" id="email" name="email" required>
     
                             <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone"> 
+                            <input type="tel" id="phone" name="phone" pattern="\d{2}[\-]\d{2}[\-]\d{2}[\-]\d{2}"> 
 
                             <label for="password">Password*</label>
-    
+                            <p id="user-instruction"> A password must be minimum 10 characters and should include uppercase and lowercase letters.</p>
                             <input type="password" pattern="(?=^.{10,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="A password must be minimum 10 characters and should include uppercase and lowercase letters." class="input-required" id="password" name="password" required> 
     
                             <label for="password-repeat">Re-enter Password*</label>
@@ -166,19 +166,19 @@
                             <fieldset class="newsletter-items">
                                 <legend>What kind of items are you interested in receiving offers?</legend>
     
-                                <input id="apparel" name="apparel" type="radio" value="apparel" checked/>
+                                <input id="apparel" name="apparel" type="checkbox" value="apparel" checked/>
                                 <label for="apparel" class="radio-label">Apparel</label>
     
-                                <input id="jewelry" name="jewelry" type="radio" value="jewelry" checked />
+                                <input id="jewelry" name="jewelry" type="checkbox" value="jewelry" checked />
                                 <label for='talk-type-2' class="radio-label">Jewelry"</label>
     
-                                <input id="accessories" name="accessories" type="radio" value="accessories" checked/>
+                                <input id="accessories" name="accessories" type="checkbox" value="accessories" checked/>
                                 <label for="accessories" class="radio-label">Accessories</label>
     
-                                <input id="shoes" name="shoes" type="radio" value="shoes" checked/>
+                                <input id="shoes" name="shoes" type="checkbox" value="shoes" checked/>
                                 <label for="shoes" class="radio-label">Shoes</label>
     
-                                <input id="handbags" name="handbags" type="radio" value="handbags"/>
+                                <input id="handbags" name="handbags" type="checkbox" value="handbags"/>
                                 <label for="handbags" class="radio-label">Handbags</label>
                             </fieldset>
                             <fieldset class="newsletter-images">
