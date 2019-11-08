@@ -27,16 +27,16 @@ console.log("You will be " + age+  " in " + yearFuture);
 //values 
 let dogYearOfBirth = 1970;
 let dogYearFuture = 2070;
-let dogYear = dogYearFuture - dogYearOfBirth;
-let shouldShowResultInDogYears = true;
+let dogAge =  dogYearFuture - dogYearOfBirth;
+let ageOfDogInHumanYear = dogAge * 7 ;
 //values 
 
 //boolean 
 //log out for dog age//
 if(shouldShowResultInDogYears = true) {
-  console.log("Your dog will be " + dogYear + " dog years old" + " in " + dogYearFuture)
+  console.log("Your dog will be " + dogAge + " dog years old" + " in " + dogYearFuture)
 } else {
-  console.log("Your dog will be " + age + " human years old" + " in " + dogYearFuture)
+  console.log("Your dog will be " +  ageOfDogInHumanYear + " human years old" + " in " + dogYearFuture)
 } 
 //log out for dog age//
 //boolean 
