@@ -28,11 +28,12 @@ let song = {
 }
 
 function addSongToDatabase(song) {
-   songDatabase = [...songDatabase, song]
+   songDatabase = songDatabase.push(song);
    return songDatabase;
 }
 
-//console.log(addSongToDatabase(song))
+//console.log(addSongToDatabase(song));
+//console.log(songDatabase);
 
 
 function getSongByTitle(title) {
