@@ -1,5 +1,3 @@
-
-const humanLifeSpan = 80;
 const minute = 1;
 const hour = 60 * minute;
 const day = 24 * hour;
@@ -10,6 +8,8 @@ function humanLifeMinute(humanLifeSpan) {
 }
 
 let humanLifeInMinutes = humanLifeMinute(80);
+
+console.log(humanLifeInMinutes);
 
 const seriesDurations = [
     {
@@ -38,11 +38,13 @@ let series3 = seriesDurations[2];
 
 
 function serieToMinutes (obj) {
-    let serieDayToMinute = (obj.days * day) * hour;
+    let serieDayToMinute = obj.days * day;
     let serieHourToMinute = obj.hours * hour;
     let seriesMinute = serieDayToMinute + serieHourToMinute + obj.minutes;
     return seriesMinute; 
 }
+
+console.log(serieToMinutes(seriesDurations[0]));
 
 let firstSeriesMinutes = serieToMinutes(series1);
 let secondSeriesMinutes = serieToMinutes(series2);
