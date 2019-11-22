@@ -9,12 +9,14 @@ const weekDay = [
     "sunday"
 ];
 
+let dayOfTheEvent = weekDay[(n % 7)-1];
+
 let today = new Date();
 let day = today.getDay();
 console.log(day);
 
 function getEventWeekday (daysLefttoEvent) {
-    let n= day + daysLefttoEvent;
+    let n = day + daysLefttoEvent;
     let dayOfTheEvent;
     if (n<= 7) {
         dayOfTheEvent= weekDay[n-1];
