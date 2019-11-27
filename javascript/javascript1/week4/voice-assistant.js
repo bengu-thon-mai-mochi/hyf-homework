@@ -20,10 +20,6 @@ let event = {} ;
 
 
 function getReply(command) { 
-    if (command) {
-        command = command.toLowerCase();
-        return command;
-    }
 
     if(command.includes("hello my name is")) {
         command = command.split(" "); // first turn words into array;
@@ -51,7 +47,8 @@ function getReply(command) {
     }   
 
     if(command.includes("remove" && "from my todo")) {
-        let commandToRemove = command;
+        command= command.split(" ");
+        commandToRemove = command[1];
         todo.splice(todo.indexOf(commandToRemove),1);
         return `Removed ${commandToRemove} from your todo`;
     }
@@ -68,10 +65,10 @@ function getReply(command) {
         return `Today is ${day} ${currentMonth}, ${currentYear}`;
     }
 
-    if(command.includes("my favorite dish")) {
+
+    if((command.includes("favorite dish")) && !command.includes("What")) {
         command = command.split(" "); // first turn it into an array 
-        command = command.pop();
-        favoriteDish.push(command);
+        favoriteDish = command.pop(); 
         return favoriteDish;
     }
 
@@ -80,11 +77,13 @@ function getReply(command) {
     }
 
     if(command.includes("set a timer")) {
-        function setTimer() {
+        command = command.split(" ");
+        timerNumber = command.splice(command.length-2,1);
+        function setTimer(timerNumber) {
             alert('Timer done');
         }        
-        setTimeout(setTimer, 240000);
-        return `Timer set for 4 minutes.`;
+        setTimeout(setTimer, (timerNumber * 60000));
+        return `Timer set for ${timerNumber} minutes.`;
     }
 
     if(command.includes("add" && "to my calendar")) {
@@ -136,3 +135,25 @@ function getReply(command) {
         return a/b;
     } 
 }
+
+
+console.log(getReply('hello my name is Benjamin'));
+console.log(getReply('what is my name?'));
+console.log(getReply('add fishing to my todo'));
+console.log(getReply('add singing in the shower to my todo'));
+console.log(getReply('remove fishing from my todo'));
+console.log(getReply('what is on my todo?'));
+console.log(getReply('what day is it today?'));
+
+console.log(getReply('What is 3+3'));
+console.log(getReply('What is 6*3'));
+console.log(getReply('What is 9/3'));
+console.log(getReply('What is 10-3'));
+
+console.log(getReply('My favorite dish is lasagne'));
+console.log(getReply('What is my favorite dish'));
+
+console.log(getReply('set a timer for 4 minutes'));
+
+console.log(getReply('Add Bike ride the 3/5/2019 to my calendar'));
+console.log(getReply('What am I doing this week?'));
