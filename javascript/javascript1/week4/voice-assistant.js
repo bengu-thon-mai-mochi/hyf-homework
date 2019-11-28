@@ -1,4 +1,4 @@
-let name;
+let nameList = [];
 let filteredItems;
 let todo = [];
 let calendar = [];
@@ -21,12 +21,16 @@ let event = {} ;
 
 function getReply(command) { 
 
+    command = command.toLowerCase();
+
     if(command.includes("hello my name is")) {
-        command = command.split(" "); // first turn words into array;
-        name = command.pop(); // second store the last item into name;
-        /*    if (name ===  ) // third check if name is already in the database 
-            { } // if it is return  `Welcome back ${name}` */
-        return `Nice to meet you ${name}`;
+        name = command.split(" ").pop(); // turns into array & stores the last item into variable;
+        if (nameList.includes(name)) { 
+            return `Welcome back ${name}`;
+        } else { 
+            nameList.push(name);
+            return `Nice to meet you ${name}`;     
+        }
     }
 
     if(command.includes("what is my name")) {
@@ -137,8 +141,9 @@ function getReply(command) {
 }
 
 
-console.log(getReply('hello my name is Benjamin'));
-console.log(getReply('what is my name?'));
+console.log(getReply('Hello my name is Benjamin'));
+console.log(getReply('Hello my name is Benjamin'));
+console.log(getReply('What is my name?'));
 console.log(getReply('add fishing to my todo'));
 console.log(getReply('add singing in the shower to my todo'));
 console.log(getReply('remove fishing from my todo'));
