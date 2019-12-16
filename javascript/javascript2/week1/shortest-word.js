@@ -1,4 +1,4 @@
-const danishWords = ['plante', 'kaffe', 'bog', 'b', 'planetarium'];
+const danishWords = ['plante', 'kaffe', 'bog', 'a', 'op', 'planetarium'];
 
 function findShortestWord(arr) {
         
@@ -6,7 +6,7 @@ function findShortestWord(arr) {
 
     for (i = 0; i < arr.length; i++) {
         
-        if (arr[i].length < arr[0].length) 
+        if (arr[i].length < word.length) 
             word = arr[i];
         }
         console.log(word);
