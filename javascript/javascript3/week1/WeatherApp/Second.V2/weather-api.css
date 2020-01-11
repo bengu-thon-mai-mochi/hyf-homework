@@ -34,7 +34,6 @@ button {
 
 main {
     box-sizing: border-box;
-    max-height: 70px; 
 }
 
 table,
@@ -47,6 +46,7 @@ table,
     flex-direction: column;
 }
 tr {
+    max-height: 80px;
     font-size: 1em;
     display: flex;
     flex-direction: row-reverse;
@@ -59,7 +59,7 @@ td {
 
 .weather-icon {
     width: 40px;
-    background:whitesmoke;
+    background:white;
     border-radius: 5px;
-    border:thick solid grey;
+    border:thin solid grey;
 }
