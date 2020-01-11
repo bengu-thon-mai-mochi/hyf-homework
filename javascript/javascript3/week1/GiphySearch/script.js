@@ -7,41 +7,31 @@ let limitInputEl = document.querySelector(".limit-input");
 let buttonEl = document.querySelector("button");
 let bodyEl = document.querySelector("body");
 
-buttonEl.addEventListener("click",  onClickEvent);
+buttonEl.addEventListener("click", fetchImages);
 
-function fetchImages(userInput, userLimit) {
-    userInput = userInputEl.value;
-    userLimit = limitInputEl.value;
-
-  if (userLimit === "") {
-    fetch(
-      `http://api.giphy.com/v1/gifs/search?q=${userInput}&api_key=${keyAPI}&limit=1`
-    )
-      .then(res => res.json())
-      .then(myJson =>
-        gifSources.push(myJson.data[0]["images"]["downsized"]["url"])
-      );
-    console.log(gifSources);
-  } else {
-    fetch(
-      `http://api.giphy.com/v1/gifs/search?q=${userInput}&api_key=${keyAPI}&limit=${userLimit}`
-    )
-      .then(res => res.json())
-      .then(function(myJson) {
-        for (let i = 0; i < userLimit; i++) {
-          gifSources.push(myJson.data[i]["images"]["downsized"]["url"]);
-        }
-      });
-  }
-
+let displayGifs = function (array) {
+  array.forEach(element => {
+      gif = document.createElement("img");
+      gif.src = element;
+      bodyEl.appendChild(gif);
+  });
 }
 
-function displayGifs(array) {
- 
-    array.forEach(element => {
-        gif = document.createElement("img");
-        gif.src = element;
-        bodyEl.appendChild(gif);
-    });
+let renderData = function (image){
+  for (let i = 0; i < image.data.length; i++) {
+    gifSources.push(image.data[i]["images"]["downsized"]["url"]);
+  }
+  displayGifs(gifSources);
+}
 
+function fetchImages(e, userInput, userLimit){
+  e.preventDefault();
+
+  userInput = userInputEl.value;
+  userLimit = limitInputEl.value;
+
+  fetch(`http://api.giphy.com/v1/gifs/search?q=${userInput}&api_key=${keyAPI}&limit=${userLimit}`)
+      .then (res => res.json())
+      .then (renderData)
+                     
 }
