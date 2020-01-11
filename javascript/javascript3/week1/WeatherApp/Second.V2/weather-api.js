@@ -1,6 +1,7 @@
 console.log("I'm up!")
 
 const keyApi = "7152c37d25eab14794cf968cf52cf5d7" 
+
 let weatherInfo = {};
 
 let userLocationEl = document.querySelector(".user-location");
@@ -15,52 +16,40 @@ let body = document.querySelector("body")
 
 submitButtonEl.addEventListener("click", fetchData);
 
+let renderData = function renderingData(weatherData){
+        if(weatherData.cod === "400"){
+                errorInfo = document.createElement("p");
+                main.appendChild(errorInfo);
+                errorInfo.classList = "error"
+                informationTable.innerText = "Please enter your city.";
+        } else if(weatherData.cod === "404"){
+                errorInfo = document.createElement("p");
+                main.appendChild(errorInfo);
+                errorInfo.classList = "error"
+                informationTable.innerText = "Please make sure you entered a valid location.";
+        } else{
+                weatherInfo.city = weatherData.name;
+                weatherInfo.temperature = `${weatherData.main.temp} Celsius`;
+                weatherInfo.iconCode = weatherData.weather[0].icon;
+                weatherInfo.description = weatherData.weather[0].description;
+                weatherInfo["wind speed"] = weatherData.wind.speed;
+                unixSunset = unixTimeConverter(weatherData.sys.sunrise);
+                unixSunrise = unixTimeConverter(weatherData.sys.sunset);
+                weatherInfo.sunrise = `${unixSunset} AM`;
+                weatherInfo.sunset = `${unixSunrise} PM`;
+                createInfoTable(weatherInfo);
+        }
+}
 
 function fetchData(e, userLocation){
         e.preventDefault();
         userLocation = userLocationEl.value;
 
-        if(userLocation === ""){
-                errorInfo = document.createElement("p");
-                main.appendChild(errorInfo);
-                errorInfo.classList = "error"
-                informationTable.innerText = "Please enter your city!";
-        } else { 
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=${keyApi}`)
-                        .then (res => res.json())
-                        .then (city => weatherInfo.city = city.name)
-                        .catch(error => informationTable.innerText = "Something went wrong. Please make sure you entered a valid location!")
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&units=metric&appid=${keyApi}`)
-                        .then (res => res.json())
-                        .then (temperature => weatherInfo.temp = temperature.main.temp)
-                        .catch(error => informationTable.innerText = "Something went wrong. Please make sure you entered a valid location!")
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=${keyApi}`)
-                        .then (res => res.json())
-                        .then (clouds => weatherInfo.cloud = clouds.weather[0].description)
-                        .catch(error => informationTable.innerText = "Something went wrong. Please make sure you entered a valid location!")
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=${keyApi}`)
-                        .then (res => res.json())
-                        .then (icon => weatherInfo.iconCode = icon.weather[0].icon)
-                        .catch(error => informationTable.innerText = "Something went wrong. Please make sure you entered a valid location!")
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=${keyApi}`)
-                        .then (res => res.json())
-                        .then (windSpeed => weatherInfo.wind= windSpeed.wind.speed)
-                        .catch(error => informationTable.innerText = "Something went wrong. Please make sure you entered a valid location!")
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=${keyApi}`)
-                        .then (res => res.json())
-                        .then (whenSunrise => weatherInfo.sunrise = unixTimeConverter(whenSunrise.sys.sunrise))
-                        .catch(error => informationTable.innerText = "Something went wrong. Please make sure you entered a valid location!")
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=${keyApi}`)
-                        .then (res => res.json())
-                        .then (whenSunset => weatherInfo.sunset = unixTimeConverter(whenSunset.sys.sunset))
-                        .catch(error => informationTable.innerText = "Something went wrong. Please make sure you entered a valid location!")
-                        
-                createInfoTable(weatherInfo);
-                } 
-        
-
+	fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&units=metric&appid=${keyApi}`)
+	        .then (res => res.json())
+                .then (renderData)
+                .catch(error => informationTable.innerText = "Something went wrong. Please try again!")
 }
-
 
 function createInfoTable(object) {
 
@@ -74,20 +63,19 @@ function createInfoTable(object) {
                         itemName = document.createElement("tr");
                         itemName.innerText = "sky";
                         icon.src = `http://openweathermap.org/img/wn/${object[item]}.png`;
-                        icon.alt = "icon has a weather symbol depending on temperature"
+                        icon.alt = "icon has a weather symbol illustrating sky condition"
                         icon.classList = "weather-icon";
                         tableEl.appendChild(itemName);
                         itemName.appendChild(icon);
                 } else { 
                         tableEl.appendChild(itemName);
                         itemValue = document.createElement("td");
-                        itemValue.innerText = object[item];
+                        itemValue.innerText = weatherInfo[item];
                         itemName.appendChild(itemValue);     
                 }
         })
 
 }
-
 
 function unixTimeConverter(unixTime) {
         dateObj = new Date(unixTime * 1000); 
@@ -95,8 +83,6 @@ function unixTimeConverter(unixTime) {
         time = utcString.slice(-11, -7);
         return time;
 }
-
-
 
 
 
