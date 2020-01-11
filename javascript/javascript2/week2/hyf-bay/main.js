@@ -5,6 +5,8 @@ const productsUl = document.querySelector('section.products ul');
 //console.log(productsUl);
 
 function renderProducts(products) {
+    productsUl.innerHTML = '';
+
     products.forEach(product => {
         const li = document.createElement('li');
 

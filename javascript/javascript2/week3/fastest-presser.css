@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+}
+
+.setting-game {
+    height: 10em;
+    background-color: aqua;
+    border: 1em solid black;
+    display: flex;
+    
+}
+.timer {
+    flex-direction: row;
+    flex-grow: 5em 4em 2em;
+}

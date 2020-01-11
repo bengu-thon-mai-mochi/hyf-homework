@@ -6,14 +6,23 @@ function sumOfArray(array) {
 
 console.log(sumOfArray(housePrices));
 
-function printAverage(array) {
+
+function plusArray(array) {
+    for (let i = 0; i < array.length; i++) {
+        array[i]++;
+    }
+}
+
+console.log(plusArray(housePrices))
+
+function calculateAverage(array) {
     let count = array.length;
     let sum = array.reduce((a, b) => a + b, 0);
     let average = sum / count;
     return average;
 }
 
-console.log(printAverage(housePrices));
+console.log(calculateAverage(housePrices));
 
 
 function orderNumber(a, b) {

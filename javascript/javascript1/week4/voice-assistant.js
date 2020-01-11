@@ -17,11 +17,16 @@ const months = ["january",
                 "december"];
 let favoriteDish = [];
 let event = {} ;
+ 
+
 
 
 function getReply(command) { 
 
     command = command.toLowerCase();
+
+    let a = parseInt(firstNumber[firstNumber.length-1]);
+    let b = parseInt(command[1].split("")[0]);
 
     if(command.includes("hello my name is")) {
         name = command.split(" ").pop(); // turns into array & stores the last item into variable;
