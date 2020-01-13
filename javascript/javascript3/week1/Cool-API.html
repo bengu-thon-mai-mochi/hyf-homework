@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CoolAPI</title>
+</head>
+<body>
+    <header> 
+        <h1>CoolAPI</h1>
+        <h3>JS3-week1</h3>
+    </header>
+    <main>
+        <section>
+            For purpose of this exercise I am analysing <a href="https://github.com/movebank/movebank-api-doc/blob/master/movebank-api.md">Movebank REST API</a>.
+        </section>  
+        <section>
+            <h2>How it works?</h2>
+            <p>
+                <ul>
+                    <li>It's open source. So it's free to use.</li>
+                    <li>One can access its database through HTTP/CSV requests or JSON/JavaScript requests.</li>
+                    <li>Movebank provides both private and public data. To be able to use private data one needs to get permission from data provider.</li>
+                    <li>Documentation to a call to public service can be seen <a href="https://www.movebank.org/movebank/service/public/json?study_id=2911040&individual_local_identifiers[]=4262-84830876&sensor_type=gps">here.</a></li>
+                </ul>
+            </p>
+            <h2>What kind of JSON data API responds with?</h2>
+            <p>
+                <ul>
+                    <li>Data structure shows objects nested in an array.</li>
+                    <li>Values are numbers, strings and an array of objects. </li>
+                    <li>One can access object that holds latitude and longitude location of an animal being tracked and timestamp in UNIX time unit.</li>
+                </ul>
+            </p>
+        </section>  
+    </main>
+</body>
+</html>
