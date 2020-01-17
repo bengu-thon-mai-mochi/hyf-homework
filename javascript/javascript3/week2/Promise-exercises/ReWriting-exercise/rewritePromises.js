@@ -1,4 +1,4 @@
-const setTimeoutPromise = function delayer(delay) {
+function setTimeoutPromise(delay) {
     return new Promise((resolve) => {
             setTimeout(resolve, delay * 1000)
         });
@@ -9,7 +9,7 @@ setTimeoutPromise(4)
         console.log(`Called after 4 seconds.`);
     });
 
-const getCurrentLocation = () => {
+function getCurrentLocation() {
         return new Promise((resolve,reject) => {
             navigator.geolocation.getCurrentPosition(resolve, reject)
         })
