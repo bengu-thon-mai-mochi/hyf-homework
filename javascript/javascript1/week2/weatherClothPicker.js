@@ -1,4 +1,4 @@
-const whichClothesToWear = function wearMe(temperature) {
+const whichClothesToWear = function (temperature) {
   if (temperature === "") {
     return "What's the temperature?";
   } else if (temperature > 30) {
