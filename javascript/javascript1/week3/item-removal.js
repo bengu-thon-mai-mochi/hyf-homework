@@ -1,15 +1,22 @@
-const names = ['Peter', 'Ahmad', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala'];
-const nameToRemove = 'Ahmad';
-
-// Write some code here
-function itemRemoval (arr, elem) { 
-    if (arr.includes(elem) === true ) {
-        let indexOfElemInArr = arr.indexOf(elem);
-        arr.splice(indexOfElemInArr, 1);
-        console.log(arr);
-    } 
+const names = [
+    "Peter",
+    "Ahmad",
+    "Yana",
+    "kristina",
+    "Rasmus",
+    "Samuel",
+    "katrine",
+    "Tala"
+];
+const nameToRemove = "Ahmad";
+  
+function removeName(array, name) {
+    if (array.includes(name) == true) {
+      const nameIndex = array.indexOf(name);
+      array.splice(nameIndex, 1);
+    }
     return;
 }
-// Code done
-
-itemRemoval(names, nameToRemove);
+  
+removeName(names, nameToRemove);
+console.log(names);
