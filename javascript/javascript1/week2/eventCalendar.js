@@ -1,28 +1,19 @@
-
-const weekDay = [
-    "monday", 
-    "tuesday", 
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
-    "sunday"
+const days = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday"
 ];
 
-let dayOfTheEvent = weekDay[(n % 7)-1];
+const date = new Date();
+const todaysIndex = date.getDay(); //index of sunday is 0 / Sunday - Saturday : 0 - 6
 
-let today = new Date();
-let day = today.getDay();
-console.log(day);
-
-function getEventWeekday (daysLefttoEvent) {
-    let n = day + daysLefttoEvent;
-    let dayOfTheEvent;
-    if (n<= 7) {
-        dayOfTheEvent= weekDay[n-1];
-    }else if(n > 7) {
-        dayOfTheEvent= weekDay[n-8];
-    }
-    return dayOfTheEvent;
+function getEventDay(daysLefttoEvent) {
+  const eventDay = days[(todaysIndex + daysLefttoEvent) % 7];
+  return eventDay;
 }
-console.log(getEventWeekday(0));
+
+console.log(getEventDay(10));
