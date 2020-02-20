@@ -2,11 +2,15 @@ const express = require('express');
 const router = express();
 
 const mealsJson = require(__dirname + '/../data/meals.json');
-const reservationsJson = require(__dirname + '/../data/reservations.json');
 const reviewsJson = require(__dirname + '/../data/reviews.json');
 
+function pickRandomItem(json) {
+   count = Object.keys(json).length;
+   return json[Math.floor(Math.random() * count)];
+}
+
 router.get('/meal', (request, response) => {
-   response.send(mealsJson);
+   response.send(pickRandomItem(mealsJson));
 });
 
 module.exports = router;

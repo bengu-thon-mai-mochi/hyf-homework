@@ -2,11 +2,12 @@ const express = require('express');
 const router = express();
 
 const mealsJson = require(__dirname + '/../data/meals.json');
-const reservationsJson = require(__dirname + '/../data/reservations.json');
 const reviewsJson = require(__dirname + '/../data/reviews.json');
 
+const largeMeals = mealsJson.filter(meal => meal.maxNumberOfGuests >= 10);
+
 router.get('/large-meals', (request, response) => {
-   response.send(mealsJson);
+   response.send(largeMeals);
 });
 
 module.exports = router;

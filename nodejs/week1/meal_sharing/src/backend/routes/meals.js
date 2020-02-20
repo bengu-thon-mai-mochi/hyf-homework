@@ -2,8 +2,16 @@ const express = require('express');
 const router = express();
 
 const mealsJson = require(__dirname + '/../data/meals.json');
-const reservationsJson = require(__dirname + '/../data/reservations.json');
 const reviewsJson = require(__dirname + '/../data/reviews.json');
+
+mealsJson.forEach((meal) => {
+   meal.reviews = [];
+   reviewsJson.forEach((review) => {
+      if(review.mealId === meal.id){
+         meal.reviews.push(review);
+      }
+   })
+})
 
 router.get('/meals', (request, response) => {
    response.send(mealsJson);

@@ -9,6 +9,24 @@
 	    "id": 2,
 	    "name": "Bengu Mochi",
 	    "email": "bengu@mochi.is",
+	    "mealId": 3
+	},
+	{
+	    "id": 3,
+	    "name": "Sara Love",
+	    "email": "sara@love.dk",
+	    "mealId": 3
+	},
+	{
+	    "id": 4,
+	    "name": "Krithi Kondana",
+	    "email": "krithi@gmail.dk",
 	    "mealId": 2
+	},
+	{
+	    "id": 4,
+	    "name": "Flower Power",
+	    "email": "flopow@yuummm.dk",
+	    "mealId": 4
     }
 ]

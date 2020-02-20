@@ -12,5 +12,12 @@
       "content": "Nice food & company!",
       "mealId": 2,
       "createdAt": 12346
+    },
+    {
+      "id": 3,
+      "numberOfStars": 3,
+      "content": "Incredible amounts of food!",
+      "mealId": 4,
+      "createdAt": 12346
     }
 ]
