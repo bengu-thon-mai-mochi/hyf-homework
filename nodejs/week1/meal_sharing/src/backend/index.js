@@ -1,36 +1,32 @@
 //set express
-const express = require('express'),
-    server = express();
-    meals = require('./meals');
-    reservations = require('./reservations');
-    reviews = require('./reviews');
+const express = require('express');
+const server = express();
+
+const cheapMeals = require('./routes/cheap-meals');
+const largeMeals = require('./routes/large-meals');
+const meals = require('./routes/meals');
+const meal = require('./routes/meal');
+const reservation = require('./routes/reservation');
+const reservations = require('./routes/reservations');
 
 server.set('port', process.env.PORT || 2000);
 
 //route 
-server.get('/meals', (request,response) => {
-    response.json(meals);
+
+//test route
+server.get('/', (request,response) => {
+    response.send('Hello World');
     });
 
-server.get('/cheap-meals',(request,response) => {
-    response.send('About page');
-    });
+//    
 
-server.get('/large-meals',(request,response) => {
-    response.send('About page');
-    });
-
-server.get('/meal',(request,response) => {
-        response.send('About page');
-    });
-
-server.get('/reservations',(request,response) => {
-        response.send('About page');
-    });
-
-server.get('/reservation',(request,response) => {
-        response.send('About page');
-    });
+//routes 
+server.get('/meal', meal);
+server.get('/cheap-meals', cheapMeals);
+server.get('/large-meals', largeMeals);
+server.get('/meals', meals);
+server.get("/reservations", reservations);
+server.get('/reservation', reservation);
 
 //error handle
 server.use((request,response)=>{
