@@ -5,7 +5,7 @@ const mealsJson = require(__dirname + '/../data/meals.json');
 const reviewsJson = require(__dirname + '/../data/reviews.json');
 
 function pickRandomItem(json) {
-   count = Object.keys(json).length;
+   count = json.length;
    return json[Math.floor(Math.random() * count)];
 }
 

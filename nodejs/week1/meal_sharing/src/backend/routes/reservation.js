@@ -4,7 +4,7 @@ const router = express();
 const reservationsJson = require(__dirname + '/../data/reservations.json');
 
 function pickRandomItem(json) {
-   count = Object.keys(json).length;
+   count = json.length;
    return json[Math.floor(Math.random() * count)];
 }
 
