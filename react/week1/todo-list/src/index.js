@@ -31,15 +31,23 @@ function Header(){
   )
 }
 
-class List extends Component {
+class ListItem extends Component {
   render() {
-    const listOftodos = this.props.todos;
-    const result = listOftodos.map(todo => {
+      const todo = this.props.todo;
       return <li key={todo.id} className="list-item"> 
                   <span className="date-style"> {todo.dueDate} </span> 
                   <span className="description-style"> {todo.description} </span>
                   <button className="delete-button"> Done! </button>
               </li>
+       ;
+  }
+}
+
+class List extends Component {
+  render() {
+    const listOftodos = this.props.todos;
+    const result = listOftodos.map(todo => {
+      return <ListItem todo={todo}/>
        });
     return <ul>{result}</ul>;
   }
