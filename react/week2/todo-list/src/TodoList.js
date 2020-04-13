@@ -2,62 +2,71 @@ import React, {Component} from 'react';
 import './TodoList.css';
 import TodoItem from './TodoItem';
 
+const todoAPI = "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw";
+
 class TodoList extends Component {
     constructor(){
         super();
         this.state = {
-          todos: [
-            {
-              "id": 1,
-              "description": "Get out of bed",
-              "isChecked": false 
-            },
-            {
-              "id": 2,
-              "description": "Brush teeth",
-              "isChecked": false
-            },
-            {
-              "id": 3,
-              "description": "Eat breakfast",
-              "isChecked": false
-            }
-          ],
+          todos: [],
         }
     };
 
-    addTodo = () => {
-        const newTodo = {
-            id: Date.now(),
-            description: "Random Text",
-            isChecked: false
-        };
+    componentDidMount(){
+        fetch(todoAPI)
+            .then(res => res.json())
+            .then(data => this.setState ({ todos: data }))
+    };
 
+    addTodo = () => {
+        const { todos } = this.state;
+        const newTodo = {
+            description: "Random text",
+            id: new Date(),
+            isChecked: false
+        }
         this.setState({ todos: [...this.state.todos, newTodo]});
     };
 
     deleteTodo = (id) => {
-        const filteredTodo = this.state.todos.filter(todo => todo.id !== id);
-
-        this.setState({ todos: filteredTodo});
+        const { todos } = this.state;
+        const filteredArray = todos.filter(todo => todo.id !== id)
+        this.setState({todos: filteredArray});
     };
+
+    todoItemClicked = (id, value) => {
+        const { todos } = this.state;
+       
+        const updatedTodos = todos.map(todo => {
+            if(todo.id === id){
+                return {
+                    ...todo,
+                    isChecked: value
+                }
+            } 
+            return todo;
+        })
+        this.setState({todos: updatedTodos })
+    }; 
 
     render(){
         const { todos } = this.state;
         if(todos.length > 0){
-            const todoItems = todos.map(todo => {
+            const todoItems = todos.map((todo) => {
                 return (
                     <TodoItem 
                         description={todo.description}
                         id={todo.id}
                         deleteTodo={this.deleteTodo}
+                        todoItemClicked={this.todoItemClicked}
+                        isChecked={todo.isChecked}
                     />
-                );
-            });  
+                    );
+                });
             return (
                 <>
                     <button onClick={this.addTodo}>Add to-do!</button>
-    
+
                     <ul className='list-container'>
                         {todoItems}
                     </ul>
