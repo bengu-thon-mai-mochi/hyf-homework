@@ -5,7 +5,7 @@ function TodoItem(props){
     const {description, id, deleteTodo, todoItemClicked} = props;
     const { isChecked } = props;
 
-    const todoItemChecked = event => {
+    const checkTodoItem = event => {
         todoItemClicked(id, event.target.checked);
     }
     
@@ -15,7 +15,7 @@ function TodoItem(props){
                 <button onClick={() => deleteTodo(id)}> Delete </button>
                 <input type="button" value="Edit Description" />
                 <label>Check</label>
-                <input type="checkbox" id="check" checked={isChecked} onChange={todoItemChecked}/>
+                <input type="checkbox" id="check" checked={isChecked} onChange={checkTodoItem}/>
             </li>
     )
 }
