@@ -1,16 +1,10 @@
 import React, {Component} from 'react';
 
 class Counter extends Component {
-  constructor(){
-    super()
-    this.state = {counter: 0}
-  };
+  state = {counter: 0}
   
   componentDidMount = () => {
-    this.timer = setInterval(
-      () => this.incrementCounter(),
-    1000
-    );
+    this.timer = setInterval(this.incrementCounter, 1000);
   };
 
   componentWillUnmount() {

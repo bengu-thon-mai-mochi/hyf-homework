@@ -5,11 +5,8 @@ import TodoItem from './TodoItem';
 const todoAPI = "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw";
 
 class TodoList extends Component {
-    constructor(){
-        super();
-        this.state = {
+    state = {
           todos: [],
-        }
     };
 
     componentDidMount(){
@@ -19,7 +16,6 @@ class TodoList extends Component {
     };
 
     addTodo = () => {
-        const { todos } = this.state;
         const newTodo = {
             description: "Random text",
             id: new Date(),
