@@ -1,13 +1,14 @@
 import React from 'react';
 import TodoList from './TodoList';
 import Counter from './Counter';
+import Border from './Border';
 
 function App(){
   return (
-      <main className="App">
+      <Border color="blue">
         <Counter />
         <TodoList />
-      </main>
+      </Border>
   )
 }
 
