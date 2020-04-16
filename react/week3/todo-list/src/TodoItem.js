@@ -21,24 +21,24 @@ function TodoItem(props){
 
     return(  
         <>
-        {isEditing ? ( 
-                <li className='todo-item-container'>
-                    <input type="text" onChange={updateDescription} value={description} />  
-                    <input type="button" className="list-item-button" value="Update" onClick={changeEditingStatus} /> 
-                    <button className="list-item-button" onClick={() => deleteTodo(id)}>Delete!</button>
-                    <label>Check</label>
-                    <input type="checkbox" id="check" checked={isChecked} onChange={todoItemChecked}/>
-                </li>
-                ) : (
-                <li className='todo-item-container'>
-                    <h4 className={isChecked ? 'checked' : ''} > {description} / {deadline.toString()} </h4>   
-                    <input type="button" className="list-item-button" value="Edit" onClick={changeEditingStatus} />
-                    <button className="list-item-button" onClick={() => deleteTodo(id)}>Delete!</button>   
-                    <label>Check</label>
-                    <input type="checkbox" id="check" checked={isChecked} onChange={todoItemChecked}/>
-                </li>
-                )
-        }
+            {isEditing ? ( 
+                    <li className='todo-item-container'>
+                        <input type="text" onChange={updateDescription} value={description} />  
+                        <input type="button" className="list-item-button" value="Update" onClick={changeEditingStatus} /> 
+                        <button className="list-item-button" onClick={() => deleteTodo(id)}>Delete!</button>
+                        <label>Check</label>
+                        <input type="checkbox" id="check" checked={isChecked} onChange={todoItemChecked}/>
+                    </li>
+                    ) : (
+                    <li className='todo-item-container'>
+                        <h4 className={isChecked ? 'checked' : ''} > {description} / {deadline.toString()} </h4> 
+                        <input type="button" className="list-item-button" value="Edit" onClick={changeEditingStatus} />
+                        <button className="list-item-button" onClick={() => deleteTodo(id)}>Delete!</button>   
+                        <label>Check</label>
+                        <input type="checkbox" id="check" checked={isChecked} onChange={todoItemChecked}/>
+                    </li>
+                    )
+            }
         </>      
     )
 }

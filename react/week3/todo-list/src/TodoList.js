@@ -45,10 +45,11 @@ class TodoList extends Component {
     };
 
     selectDate = (date) => {
-        console.log(date);
-
-        date < new Date() ? alert("This doesn't make sense, please enter a due date for today or later.")
-        : this.setState({selectedDate: date});
+        if(date < new Date()){
+            alert("This doesn't make sense, please enter a due date for today or later.")
+        } else {
+            this.setState({selectedDate: date});
+        };
     };
 
     deleteTodo = (id) => {
