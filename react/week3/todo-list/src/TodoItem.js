@@ -9,15 +9,15 @@ function TodoItem(props){
 
     const todoItemChecked = event => {
         todoItemClicked(id, event.target.checked);
-    }
+    };
 
     const changeEditingStatus = () => {
         setIsEditing(id);
-    }
+    };
 
     const updateDescription = event => {
         rewriteDescription(id, event)
-    }
+    };
 
     return(  
         <>

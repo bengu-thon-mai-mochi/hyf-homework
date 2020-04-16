@@ -7,21 +7,17 @@ import './TodoList.css';
 const todoAPI = "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw";
 
 class TodoList extends Component {
-    constructor(){
-        super();
-        this.state = {
+    state = {
           todos: [],
           selectedDate: new Date(),
-          isEditing: false,
-          error: ''
-        }
+          isEditing: false
     };
 
     componentDidMount(){
         fetch(todoAPI)
             .then(res => res.json())
             .then(data => this.setState ({ todos: data }))
-            .catch(err => this.setState({ error: err.status}))
+            .catch(err => console.log(err))
     };
 
     addTodo = (newData) => {
@@ -40,13 +36,13 @@ class TodoList extends Component {
             id: new Date(),
             isChecked: false,
             deadline: this.state.selectedDate
-        }
+        };
         this.addTodo(newTodo);
     };
 
     selectDate = (date) => {
         this.setState({selectedDate: date});
-    }
+    };
 
     deleteTodo = (id) => {
         const { todos } = this.state;
@@ -81,10 +77,10 @@ class TodoList extends Component {
                 }
             } 
             return todo;
-        })
+        });
 
-        this.setState({todos: updatedTodos})
-    }
+        this.setState({todos: updatedTodos});
+    };
 
     rewriteDescription = (id, event) => {
         const { todos } = this.state;
@@ -97,9 +93,9 @@ class TodoList extends Component {
                 }
             } 
             return todo;
-        })
+        });
 
-        this.setState({todos: updatedTodos})
+        this.setState({todos: updatedTodos});
     };
 
     render() {
@@ -132,13 +128,13 @@ class TodoList extends Component {
                         }
                     </ul>
                 ) : ( 
-                       <p>There's no to-dos on your list. Please add it by clicking button above</p>
+                       <p>There's no to-dos on your list. Please add it by clicking button above.</p>
                 )}
             </>
         );
-    }
+    };
 
-} 
+} ;
 
 export default TodoList;
 

@@ -3,9 +3,7 @@
     margin: 4px;
 }
 
-.list-item-button {
-    width: 20%;
-    border: 2px dotted blue;
-    font-size: 16px;
+.list-container {
+    display: flex;
+    flex-direction: column;
 }
-  
