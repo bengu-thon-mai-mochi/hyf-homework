@@ -15,8 +15,8 @@ function AddForm(props){
                 Set deadline:
             </label>
             <DatePicker
-                selected= {selectedDate}
-                onSelect=   {selectDate}
+                selected={selectedDate}
+                onSelect={selectDate}
             />
 
             <input type="button" value="Add" onClick={handleAdd} />

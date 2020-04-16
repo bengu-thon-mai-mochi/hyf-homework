@@ -20,33 +20,40 @@ class TodoList extends Component {
             .catch(err => console.log(err))
     };
 
+    setDescription = (event) => {
+        this.setState({...this.state, description: event.target.value});
+    };
+
+    handleAdd = () => {
+        if(this.state.description === undefined ||  this.state.description === ""){
+            alert('please add todo');
+        } else {
+            const newTodo = {
+                description: this.state.description,
+                id: new Date(),
+                isChecked: false,
+                deadline: this.state.selectedDate
+            };
+            this.addTodo(newTodo);
+        };
+    };
+
     addTodo = (newData) => {
         const { todos } = this.state;
 
         this.setState({todos: [...todos, newData]});
     };
 
-    setDescription = (event) => {
-        this.setState({...this.state, description: event.target.value})
-    };
-
-    handleAdd = () => {
-        const newTodo = {
-            description: this.state.description,
-            id: new Date(),
-            isChecked: false,
-            deadline: this.state.selectedDate
-        };
-        this.addTodo(newTodo);
-    };
-
     selectDate = (date) => {
-        this.setState({selectedDate: date});
+        console.log(date);
+
+        date < new Date() ? alert("This doesn't make sense, please enter a due date for today or later.")
+        : this.setState({selectedDate: date});
     };
 
     deleteTodo = (id) => {
         const { todos } = this.state;
-        const filteredArray = todos.filter(todo => todo.id !== id)
+        const filteredArray = todos.filter(todo => todo.id !== id);
         this.setState({todos: filteredArray});
     };
 
@@ -58,11 +65,12 @@ class TodoList extends Component {
                 return {
                     ...todo,
                     isChecked: value
-                }
-            } 
+                };
+            };
             return todo;
-        })
-        this.setState({todos: updatedTodos})
+        });
+
+        this.setState({todos: updatedTodos});
     }; 
 
 
@@ -74,8 +82,8 @@ class TodoList extends Component {
                 return {
                     ...todo,
                     isEditing: !todo.isEditing
-                }
-            } 
+                };
+            };
             return todo;
         });
 

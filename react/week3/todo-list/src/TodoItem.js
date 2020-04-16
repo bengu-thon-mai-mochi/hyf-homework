@@ -21,10 +21,7 @@ function TodoItem(props){
 
     return(  
         <>
-        {description === undefined ? (
-            alert('Your todo description is empty')
-        ) : (
-            isEditing ? ( 
+        {isEditing ? ( 
                 <li className='todo-item-container'>
                     <input type="text" onChange={updateDescription} value={description} />  
                     <input type="button" className="list-item-button" value="Update" onClick={changeEditingStatus} /> 
@@ -41,7 +38,6 @@ function TodoItem(props){
                     <input type="checkbox" id="check" checked={isChecked} onChange={todoItemChecked}/>
                 </li>
                 )
-            )
         }
         </>      
     )
