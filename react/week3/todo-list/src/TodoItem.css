@@ -1,0 +1,15 @@
+.todo-item-container {
+    display: flex;
+    border: 1px solid blue;
+    list-style-type: none;
+}
+
+.list-item-button {
+    width: 10%;
+    border: 2px dotted blue;
+    font-size: 16px;
+}
+
+.checked {
+    text-decoration: line-through;
+}
