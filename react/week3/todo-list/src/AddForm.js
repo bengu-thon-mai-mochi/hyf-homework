@@ -19,7 +19,7 @@ function AddForm(props){
                 onSelect={selectDate}
             />
 
-            <input type="button" value="Add" onClick={handleAdd} />
+            <button onClick={handleAdd}>Add</button>
         </>
     )
 };
