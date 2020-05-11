@@ -154,9 +154,16 @@ WHERE price < 20;
 
 -- Get meals that still has available reservations
 
-SELECT max_reservations, number_of_guests FROM meal
-JOIN reservation ON reservation.meal_id = meal.id
-WHERE max_reservations > number_of_guests;
+SELECT 
+    meal.*,
+    SUM(reservation.Number_of_guests),
+    meal.Max_Reservations
+FROM
+    meal
+        INNER JOIN
+    reservation ON meal.id = reservation.meal_id
+GROUP BY meal.id
+HAVING SUM(reservation.Number_of_guests) < meal.Max_Reservations
 
 -- Get meals that partially match a title.
 	-- Rød grød med will match the meal with the title Rød grød med fløde
