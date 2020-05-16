@@ -1,5 +1,7 @@
 broccoli
 mushroom
-cabbage
+onion
 potato
 tomato
+peas
+aubergine
