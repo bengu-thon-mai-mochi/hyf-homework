@@ -1,7 +1,5 @@
 broccoli
 mushroom
-onion
+corn
 potato
 tomato
-peas
-aubergine
