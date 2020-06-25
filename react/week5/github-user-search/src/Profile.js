@@ -15,7 +15,7 @@ const Profile = () => {
             res
                 .json()
                 .then(res => {
-                    setUserinfo(res)
+                    setUserinfo(res);
                 })
                 .catch(err => console.log(err));
         }
@@ -29,10 +29,11 @@ const Profile = () => {
                 <Link to="/about">About</Link>
                 <Link to="/">Home</Link>
             </nav>
+            <h2>{username.name}</h2>
             <main>
                 <div>
-                    <h3>{userinfo.name} <span>({username})</span>'s profile</h3> 
-                    <img src={userinfo.avatar_url} alt="" />
+                    <h3>{username.name}<span>({username})</span>'s profile</h3> 
+                    <a href={userinfo.html_url}><img src={userinfo.avatar_url} alt="" /></a>
                     
                     <div>
                         {userinfo.bio && <p>{userinfo.bio}</p>}
