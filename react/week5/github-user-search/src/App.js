@@ -20,8 +20,7 @@ const App = () => {
             <About />
           </Route>
           <Route exact path="/:username" children={<Profile />} />
-      </Switch>
-      
+      </Switch>  
     </div>
   );
 }
