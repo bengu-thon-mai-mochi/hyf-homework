@@ -6,7 +6,7 @@ const path = require("path");
 const mealsRouter = require("./api/meals");
 const reservationRouter = require("./api/reservation");
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 7000;
 
 const buildPath = path.join(__dirname, "./../frontend");
 app.use(express.static(buildPath));
