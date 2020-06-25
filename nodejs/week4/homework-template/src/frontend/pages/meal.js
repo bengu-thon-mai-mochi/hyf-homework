@@ -5,16 +5,16 @@ const createReservation = (id) => {
 
 	if (!fullname || !phonenumber || !email) {
 		alert('Please enter information details');
-	}
-
-	postData(`/api/reservation/`, {
-		meal_id: id,
-		name: fullname,
-		email: email,
-		phonenumber: phonenumber
-	}).then((res) => {
-		showResponseMessage(res);
+	} else {
+		postData(`/api/reservation/`, {
+			meal_id: id,
+			name: fullname,
+			email: email,
+			phonenumber: phonenumber
+		}).then((res) => {
+			showResponseMessage(res);
 	});
+	}
 };
 
 const showResponseMessage = (response) => {
@@ -38,7 +38,7 @@ async function postData(url = '', data = {}) {
 }
 
 window.handleMealRequest = (params) => {
-	fetch(`/api/meals/${params.id}`).then((response) => response.json()).then((meals) => {
+	fetch(`/api/meals/${params.id}`).then(response => response.json()).then((meals) => {
 		const specificMeal = meals
 			.filter((meal) => meal.Title)
 			.map(

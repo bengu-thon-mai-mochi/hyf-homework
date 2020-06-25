@@ -1,16 +1,16 @@
 const searchSpecificMeal = event => {
 	const searchedTitle = this.event.target.value;
 	fetch(`/api/meals?title=${searchedTitle}`)
-		.then((response) => response.json())
-		.then((meals) => renderMeals(meals))
-		.catch((err) => console.log(err));
+		.then(response => response.json())
+		.then(meals => renderMeals(meals))
+		.catch(err => console.log("i am searchspecific meals error", err));
 };
 
 const fetchAllMeals = () => {
 	fetch('/api/meals')
 		.then(response => response.json())
 		.then(meals => renderMeals(meals))
-		.catch(err => console.log(err));
+		.catch(err => console.log("i am fetch all meals error", err));
 };
 
 const renderMeals = meals => {
@@ -33,7 +33,6 @@ const renderMeals = meals => {
       </div>`
     )
     .join('')
-
 }
 
 window.handleHomeRequest = () => {

@@ -10,26 +10,26 @@ const createMeal = () => {
 
   if(!title || !description  || !location || !reservation_time  || !max_reservation || !price){
     alert('Please enter information details')
-  };
-
-  postData(`/api/meals`, {
-    'title': title,
-    'description': description,
-    'location': location,
-    'reservation_time': reservation_time,
-    'max_reservation': max_reservation,
-    'price': price,
-    'created_date': created_date
-  })
-    .then(res => showResMessage(res))
-    .catch(err => console.log(err))
+  } else {
+    postData(`/api/meals`, {
+      'title': title,
+      'description': description,
+      'location': location,
+      'reservation_time': reservation_time,
+      'max_reservation': max_reservation,
+      'price': price,
+      'created_date': created_date
+    })
+      .then(res => showResMessage(res))
+      .catch(err => console.log(err))
+  }
 };
 
 const showResMessage = (res) => {
   if(res.status === 200){
-    alert('Meal is created!')
+    alert('Meal is created!');
   } else {
-    alert('A problem had occurred while submitting please try again.')
+    alert('A problem had occurred while submitting please try again.');
   }
 }
 
