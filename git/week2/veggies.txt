@@ -3,3 +3,8 @@ mushroom
 corn
 potato
 tomato
+artichoke
+potato
+tomato
+cauliflower
+rucola
