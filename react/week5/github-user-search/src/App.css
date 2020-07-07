@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 4em;
+  color: plum;
+  border-top: 40px solid aquamarine;
+  border-bottom: 2px dashed aquamarine;
+  border-left: 30px solid aquamarine;
+  border-right: 30px solid aquamarine;
+  border-right: 30px solid aquamarine;
+}
+
+input {
+  width: 35%;
+  height: 40px;
+  border: 2px solid blue ;
+  background: plum;
+  text-align: center;
+  color: whitesmoke;
+  border-radius:5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+nav {
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgb(111,231,190);
+  background: radial-gradient(circle, rgba(111,231,190,0.7245273109243697) 0%, rgba(217,148,233,1) 100%);
+}
+
+nav a {
+  width: 70px;
+  padding: 10px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: blue;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+nav a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: purple;
+}
+
+ul {
+  list-style-type: none;
+  width: 92%;
+}
+
+li {
+  padding: 1%;
+  border-bottom: 1px dotted blue;
+}
